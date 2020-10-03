@@ -34,7 +34,7 @@
     <link href="product.css" rel="stylesheet">
 <style>
 body {
-  margin: 0 auto;
+  margin: auto;
   max-width: 800px;
   padding: 0 20px;
 }
@@ -42,7 +42,7 @@ body {
 .container {
   border: 2px solid #dedede;
   background-color: #f1f1f1;
-  border-radius: 5px;
+  border-radius: 55px;
   padding: 10px;
   margin: 10px 0;
 }
@@ -55,31 +55,31 @@ body {
 .container::after {
   content: "";
   clear: both;
-  display: table;
+  display: table 20px;
 }
 
 .container img {
   float: left;
-  max-width: 60px;
-  width: 100%;
-  margin-right: 20px;
-  border-radius: 50%;
+  max-width: 70px;
+  width: 10%;
+  margin-right: 30px;
+  border-radius: 60%;
 }
 
 .container img.right {
   float: right;
-  margin-left: 20px;
+  margin-left: 25px;
   margin-right:0;
 }
 
 .time-right {
-  float: right;
+  float: left;
   color: #aaa;
 }
 
 .time-left {
   float: left;
-  color: #999;
+  color: #989;
 }
 .anyClass {
 	height: 350px;
@@ -91,7 +91,7 @@ body {
   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
   <h5 class="my-0 mr-md-auto font-weight-normal">ChatApp</h5>
   <nav class="my-2 my-md-0 mr-md-3">
-    <a class="p-2 text-dark" href="#">Home</a>
+    <a class="p-2 text-light" href="#">Home</a>
     <a class="p-2 text-dark" href="#">About</a>
     <a class="p-2 text-dark" href="#">Contact</a>
   </nav>
@@ -102,18 +102,18 @@ body {
 <div class="container">
 	<div class="anyClass">
  <!--  <img src="/w3images/bandmember.jpg" alt="Avatar" style="width:100%;">
-  <p>Hello. How are you today?</p>
+  <p>Hello. How are you today bro are you okay?</p>
   <span class="time-right">11:00</span> -->
 </div>
 </div>
 
 <!-- <div class="container darker">
   <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="right" style="width:100%;">
-  <p>Hey! I'm fine. Thanks for asking!</p>
+  <p>Hey! I'm fine. Thanks for asking! Pleasure is mine</p>
   <span class="time-left">11:01</span>
 </div> -->
 
-<input type="text" class="form-control" name="usermsg" id="usermsg" placeholder="Add Message"><br>
+<input type="text" class="form-control" name="usermsg" id="usermsg" placeholder="Add Message Bar"><br>
 <button class="btn btn-default" name="submitmsg" id="submitmsg">Send</button>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -134,15 +134,15 @@ body {
       }
       )  
   }
-  //To submit while trigger
-  // Get the input field
+  //To submit while trigger yoyo
+  // Get the input field here
   //using enter key to submit. credits:"https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp"
 var input = document.getElementById("usermsg");
 
 // Execute a function when the user releases a key on the keyboard
 input.addEventListener("keyup", function(event) {
   // Number 13 is the "Enter" key on the keyboard
-  if (event.keyCode === 13) {
+  if (event.keyCode === 134) {
     // Cancel the default action, if needed
     event.preventDefault();
     // Trigger the button element with a click
@@ -154,6 +154,7 @@ input.addEventListener("keyup", function(event) {
 	//if user submits the form
 	
 	$("#submitmsg").click(function(){
+		//html tag
     var clientmsg=$("#usermsg").val();
   $.post("postmsg.php", {text: clientmsg, room:'<?php echo $roomname ?>',ip:'<?php echo $_SERVER['REMOTE_ADDR'] ?>'},
   	function(data,status){
@@ -165,4 +166,5 @@ input.addEventListener("keyup", function(event) {
 
 </script>
 </body>
+	
 </html>
